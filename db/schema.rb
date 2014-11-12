@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105180808) do
+ActiveRecord::Schema.define(version: 20141105180939) do
 
   create_table "authors", force: true do |t|
     t.string   "firstname"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20141105180808) do
   end
 
   add_index "theses", ["author_id"], name: "index_theses_on_author_id"
-  add_index "theses", ["faculty_id"], name: "index_theses_on_faculty_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
