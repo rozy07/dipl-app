@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+<%- unless user_signed_in? %>
+	<%= link_to 'Sign in', new_user_session_path, class: 'btn btn-inverse' %>
+	<%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-inverse' %>
+<%- else %>
+	<%= link_to 'Logout', destroy_user_session_path, method: 'delete' ,class: 'btn btn-inverse' %>
+	<%= current_user.email %>
+<%- end %>
+	<%= yield %>
+</div>
 
 </body>
 </html>
